@@ -14,6 +14,7 @@ namespace JPCadastro.Controllers.Base
             _uow=uow;
         }
 
+        //Adicionar (POST)
         protected IActionResult JPPostActionResult(CommandResponse commandResponse)
         {
             if (!commandResponse.Sucesso)
@@ -24,6 +25,31 @@ namespace JPCadastro.Controllers.Base
                 return Created("", commandResponse);
 
             return TratativaErroPersistencia(commitResult);
+        }
+
+        //Atualizar (PUT)
+        protected IActionResult JPPutActionResult(CommandResponse commandResponse)
+        {
+            if (!commandResponse.Sucesso)
+                return BadRequest(commandResponse);
+
+            var commitResult = _uow.Commit();
+            if (commitResult.Sucesso)
+                return Ok(commandResponse);
+
+            return TratativaErroPersistencia(commitResult);
+        }
+
+        //LISTAR (GET)
+        protected IActionResult JPGetActionResult(CommandResponse commandResponse)
+        {
+            if (!commandResponse.Sucesso)
+                return BadRequest(commandResponse);
+
+            if (commandResponse.Dados==null)
+                return NoContent();
+
+            return Ok(commandResponse);
         }
 
         private IActionResult TratativaErroPersistencia(CommitResult commitResult)

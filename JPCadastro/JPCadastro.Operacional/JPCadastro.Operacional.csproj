@@ -11,8 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\Aluno\AtualizarAluno\" />
-    <Folder Include="Commands\Aluno\ListarAluno\" />
     <Folder Include="Commands\Aluno\ObterAluno\" />
     <Folder Include="Commands\Aluno\RemoverAluno\" />
   </ItemGroup>

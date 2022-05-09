@@ -33,9 +33,19 @@ namespace JPCadastro.Infra.Data.Repositories.Base
            return DbSet.AsEnumerable();
         }
 
+        public IEnumerable<TEntity> ListarSemRastreamento()
+        {
+            return DbSet.AsNoTracking().AsEnumerable();
+        }
+
         public TEntity ObterPorId(TId id)
         {
             return DbSet.Find(id);
+        }
+
+        public TEntity ObterPorSemRastreamento(TId id)
+        {
+            return DbSet.AsNoTracking().FirstOrDefault(p => p.Id.Equals(id));
         }
 
         public void Remover(TEntity entity)

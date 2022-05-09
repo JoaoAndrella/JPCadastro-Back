@@ -13,5 +13,7 @@ namespace JPCadastro.Core.Interfaces.Base
         void Remover(TEntity entity);
 
         TEntity ObterPorId(TId id);
+        TEntity ObterPorSemRastreamento(TId id);
+        IEnumerable<TEntity> ListarSemRastreamento();
     }
 }

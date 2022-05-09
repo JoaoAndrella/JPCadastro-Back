@@ -4,40 +4,39 @@ using JPCadastro.Operacional.Interfaces.Repositories;
 using MediatR;
 using prmToolkit.NotificationPattern;
 
-namespace JPCadastro.Operacional.Commands.Aluno.AdicionarAluno
+namespace JPCadastro.Operacional.Commands.Aluno.AtualizarAluno
 {
-    public class AdicionarAlunoHandler : Notifiable,
-        IRequestHandler<AdicionarAlunoRequest, CommandResponse>
+    public class AtualizarAlunoHandler : Notifiable,
+        IRequestHandler<AtualizarAlunoRequest, CommandResponse>
     {
         private readonly IRepositoryAluno _repositoryAluno;
 
-        public AdicionarAlunoHandler(IRepositoryAluno repositoryAluno)
+        public AtualizarAlunoHandler(IRepositoryAluno repositoryAluno)
         {
             _repositoryAluno=repositoryAluno;
         }
 
-        public Task<CommandResponse> Handle(AdicionarAlunoRequest request,
+        public Task<CommandResponse> Handle(AtualizarAlunoRequest request,
             CancellationToken cancellationToken)
         {
 
             //TESTANDO SE O REQUEST É NULO
             if (request==null)
             {
-                AddNotification("AdicionarAlunoHandler", "Request é Obrigatório");
+                AddNotification("AtualizarAlunoHandler", "Request é Obrigatório");
                 return Task.FromResult(new CommandResponse(this));
             }
 
             //TESTANDO SE O ALUNO JÁ ESTA CADASTRADO
             var aluno = _repositoryAluno.ObterPorId(request.Cpf);
-            if (aluno!=null)
+            if (aluno==null)
             {
-                AddNotification("AdicionarAlunoHandler", "Aluno Já Está Cadastrado");
+                AddNotification("AtualizarAlunoHandler", "Aluno Não Localizado");
                 return Task.FromResult(new CommandResponse(this));
             }
 
             //CRIANDO O OBJT ALUNO
-            aluno = new AlunoEntity(
-                request.Cpf,
+            aluno.Atualizar(
                 request.Nome,
                 request.Telefone
                 );
@@ -46,10 +45,10 @@ namespace JPCadastro.Operacional.Commands.Aluno.AdicionarAluno
             if (IsInvalid())
                 return Task.FromResult(new CommandResponse(this));
 
-            _repositoryAluno.Adcionar(aluno);
+            _repositoryAluno.Atualizar(aluno);
 
-            return Task.FromResult(new CommandResponse(new AdicionarAlunoResponse(
-                aluno.Cpf, "Aluno Cadastrado Com Sucesso"), this));
+            return Task.FromResult(new CommandResponse(new AtualizarAlunoResponse(
+                aluno.Cpf, "Aluno Atualizado Com Sucesso"), this));
         }
     }
 }

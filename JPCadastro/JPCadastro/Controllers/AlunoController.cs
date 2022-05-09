@@ -1,6 +1,8 @@
 ﻿using JPCadastro.Controllers.Base;
 using JPCadastro.Core.Interfaces.UoW;
 using JPCadastro.Operacional.Commands.Aluno.AdicionarAluno;
+using JPCadastro.Operacional.Commands.Aluno.AtualizarAluno;
+using JPCadastro.Operacional.Commands.Aluno.ListarAluno;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,7 +23,16 @@ namespace JPCadastro.Controllers
             return JPPostActionResult(await _mediator.Send(request));
         }
 
-        //   [HttpPut("atualizar")]
-        //  public async Task<IActionResult> Atualizar()
+        [HttpPut("atualizar")]
+        public async Task<IActionResult> Atualizar(AtualizarAlunoRequest request)
+        {
+            return JPPutActionResult(await _mediator.Send(request));
+        }
+
+        [HttpGet("listar")]
+        public async Task<IActionResult> Listar()
+        {
+            return JPGetActionResult(await _mediator.Send(new ListarAlunoRequest()));
+        }
     }
 }
