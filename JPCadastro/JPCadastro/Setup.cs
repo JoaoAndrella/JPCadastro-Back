@@ -1,5 +1,9 @@
 ﻿using JPCadastro.Core.Interfaces.UoW;
+using JPCadastro.Infra.Data.Context;
+using JPCadastro.Infra.Data.Repositories;
 using JPCadastro.Infra.Data.UoW;
+using JPCadastro.Operacional.Interfaces.Repositories;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -31,6 +35,18 @@ namespace JPCadastro
         public static void ConfigureUnitOfWork(this IServiceCollection services)
         {
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+        }
+
+        public static void ConfigureRepository(this IServiceCollection services)
+        {
+            services.AddTransient<IRepositoryAluno, RepositoryAluno>();
+
+        }
+
+        public static void ConfigureMediatorJPCadastroOperacional(this IServiceCollection services)
+        {
+            var assemblyJPOperacionalDomain = AppDomain.CurrentDomain.Load("JPCadastro.Operacional");
+            services.AddMediatR(assemblyJPOperacionalDomain);
         }
     }
 }

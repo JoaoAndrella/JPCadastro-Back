@@ -8,6 +8,11 @@ namespace JPCadastro.Infra.Data.UoW
     {
         private readonly JPCadastroContext _context;
 
+        public UnitOfWork(JPCadastroContext context)
+        {
+            _context=context;
+        }
+
         public CommitResult Commit()
         {
             try

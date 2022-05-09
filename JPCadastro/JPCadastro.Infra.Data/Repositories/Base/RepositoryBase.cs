@@ -2,6 +2,7 @@
 using JPCadastro.Core.Interfaces.Base;
 using JPCadastro.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace JPCadastro.Infra.Data.Repositories.Base
 {
@@ -30,6 +31,11 @@ namespace JPCadastro.Infra.Data.Repositories.Base
         public IEnumerable<TEntity> Listar()
         {
            return DbSet.AsEnumerable();
+        }
+
+        public TEntity ObterPorId(TId id)
+        {
+            return DbSet.Find(id);
         }
 
         public void Remover(TEntity entity)

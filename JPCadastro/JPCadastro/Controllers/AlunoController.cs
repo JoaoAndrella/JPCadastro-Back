@@ -18,7 +18,10 @@ namespace JPCadastro.Controllers
         [HttpPost("adicionar")]
         public async Task<IActionResult> Adicionar(AdicionarAlunoRequest request)
         {
-            return 
+            return JPPostActionResult(await _mediator.Send(request));
         }
+
+        //   [HttpPut("atualizar")]
+        //  public async Task<IActionResult> Atualizar()
     }
 }

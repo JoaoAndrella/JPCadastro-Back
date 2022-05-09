@@ -1,5 +1,4 @@
 ﻿using JPCadastro.Core.Entities;
-using System.Linq.Expressions;
 
 namespace JPCadastro.Core.Interfaces.Base
 {
@@ -13,8 +12,6 @@ namespace JPCadastro.Core.Interfaces.Base
 
         void Remover(TEntity entity);
 
-        TEntity ObterPorSemRastreamento(Func<TEntity, bool> onde);
-        TEntity ObterPorSemRastreamento(Func<TEntity, bool> onde, params Expression<Func<TEntity, object>>[] incluirPropriedadesNavegacao);
-        TEntity ObterPorSemRastreamento(Func<TEntity, bool> onde, params string[] incluirPropriedadesNavegacao);
+        TEntity ObterPorId(TId id);
     }
 }

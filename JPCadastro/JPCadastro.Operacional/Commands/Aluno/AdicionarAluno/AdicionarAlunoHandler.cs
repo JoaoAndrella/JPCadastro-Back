@@ -16,7 +16,7 @@ namespace JPCadastro.Operacional.Commands.Aluno.AdicionarAluno
             _repositoryAluno=repositoryAluno;
         }
 
-        public Task<CommandResponse> Handle(AdicionarAlunoRequest request, 
+        public Task<CommandResponse> Handle(AdicionarAlunoRequest request,
             CancellationToken cancellationToken)
         {
 
@@ -26,9 +26,9 @@ namespace JPCadastro.Operacional.Commands.Aluno.AdicionarAluno
                 AddNotification("AdicionarAlunoHandler", "Request é Obrigatório");
                 return Task.FromResult(new CommandResponse(this));
             }
-            
+
             //TESTANDO SE O ALUNO JÁ ESTA CADASTRADO
-            var aluno = _repositoryAluno.ObterPorSemRastreamento(p => p.Cpf == request.Cpf);
+            var aluno = _repositoryAluno.ObterPorId(request.Cpf);
             if (aluno!=null)
             {
                 AddNotification("AdicionarAlunoHandler", "Aluno Já Está Cadastrado");
@@ -43,7 +43,7 @@ namespace JPCadastro.Operacional.Commands.Aluno.AdicionarAluno
                 );
             AddNotifications(aluno);
 
-            if(IsInvalid())
+            if (IsInvalid())
                 return Task.FromResult(new CommandResponse(this));
 
             _repositoryAluno.Adcionar(aluno);

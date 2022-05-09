@@ -1,0 +1,12 @@
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Core\bin\Debug\net6.0\JPCadastro.Core.deps.json
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Core\bin\Debug\net6.0\JPCadastro.Core.dll
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Core\bin\Debug\net6.0\JPCadastro.Core.pdb
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Core\obj\Debug\net6.0\JPCadastro.Core.csproj.AssemblyReference.cache
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Core\obj\Debug\net6.0\JPCadastro.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Core\obj\Debug\net6.0\JPCadastro.Core.AssemblyInfoInputs.cache
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Core\obj\Debug\net6.0\JPCadastro.Core.AssemblyInfo.cs
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Core\obj\Debug\net6.0\JPCadastro.Core.csproj.CoreCompileInputs.cache
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Core\obj\Debug\net6.0\JPCadastro.Core.dll
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Core\obj\Debug\net6.0\refint\JPCadastro.Core.dll
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Core\obj\Debug\net6.0\JPCadastro.Core.pdb
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Core\obj\Debug\net6.0\ref\JPCadastro.Core.dll

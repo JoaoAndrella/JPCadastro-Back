@@ -26,6 +26,8 @@ namespace JPCadastro.Infra.Data.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = "server=mysql.ispac.com.br;port=3306;database=ispac24;uid=ispac24;password=ispac123";
+            optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         }
+
     }
 }
