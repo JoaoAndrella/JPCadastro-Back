@@ -1,5 +1,4 @@
 ﻿using JPCadastro.Core.DTOs;
-using JPCadastro.Operacional.Entities.Aluno;
 using JPCadastro.Operacional.Interfaces.Repositories;
 using MediatR;
 using prmToolkit.NotificationPattern;

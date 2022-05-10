@@ -3,11 +3,15 @@ using JPCadastro.Core.Interfaces.UoW;
 using JPCadastro.Operacional.Commands.Aluno.AdicionarAluno;
 using JPCadastro.Operacional.Commands.Aluno.AtualizarAluno;
 using JPCadastro.Operacional.Commands.Aluno.ListarAluno;
+using JPCadastro.Operacional.Commands.Aluno.ObterAluno;
+using JPCadastro.Operacional.Commands.Aluno.RemoverAluno;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JPCadastro.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class AlunoController : BaseController
     {
         private readonly IMediator _mediator;
@@ -33,6 +37,18 @@ namespace JPCadastro.Controllers
         public async Task<IActionResult> Listar()
         {
             return JPGetActionResult(await _mediator.Send(new ListarAlunoRequest()));
+        }
+
+        [HttpGet("obter")]
+        public async Task<IActionResult> Obter([FromQuery] string cpf)
+        {
+            return JPGetActionResult(await _mediator.Send(new ObterAlunoRequest(cpf)));
+        }
+
+        [HttpDelete("remover")]
+        public async Task<IActionResult> Remover([FromQuery] string cpf)
+        {
+            return JPDeletActionResult(await _mediator.Send(new RemoverAlunoRequest(cpf)));
         }
     }
 }

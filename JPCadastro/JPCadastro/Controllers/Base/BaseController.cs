@@ -40,7 +40,7 @@ namespace JPCadastro.Controllers.Base
             return TratativaErroPersistencia(commitResult);
         }
 
-        //LISTAR (GET)
+        //LISTAR/OBTER (GET)
         protected IActionResult JPGetActionResult(CommandResponse commandResponse)
         {
             if (!commandResponse.Sucesso)
@@ -52,6 +52,22 @@ namespace JPCadastro.Controllers.Base
             return Ok(commandResponse);
         }
 
+        //REMOVER (DELETE)
+        protected IActionResult JPDeletActionResult(CommandResponse commandResponse)
+        {
+            if (!commandResponse.Sucesso)
+                return BadRequest(commandResponse);
+
+            var commitResult = _uow.Commit();
+            if (commitResult.Sucesso)
+                return Ok(commandResponse);
+
+            return TratativaErroPersistencia(commitResult);
+        }
+
+
+
+        //TRATATIVAS DE ERRO DO COMMIT
         private IActionResult TratativaErroPersistencia(CommitResult commitResult)
         {
             var erroResponse = new List<Notification>
