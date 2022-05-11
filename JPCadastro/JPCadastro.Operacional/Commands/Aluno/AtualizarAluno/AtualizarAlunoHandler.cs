@@ -47,7 +47,7 @@ namespace JPCadastro.Operacional.Commands.Aluno.AtualizarAluno
             _repositoryAluno.Atualizar(aluno);
 
             return Task.FromResult(new CommandResponse(new AtualizarAlunoResponse(
-                aluno.Cpf, "Aluno Atualizado Com Sucesso"), this));
+                aluno.Id, "Aluno Atualizado Com Sucesso"), this));
         }
     }
 }

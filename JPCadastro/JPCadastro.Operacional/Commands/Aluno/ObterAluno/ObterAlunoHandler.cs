@@ -35,7 +35,7 @@ namespace JPCadastro.Operacional.Commands.Aluno.ObterAluno
 
             return Task.FromResult(new CommandResponse(new ObterAlunoResponse
             {
-                Cpf = aluno.Cpf,
+                Cpf = aluno.Id,
                 Nome = aluno.Nome,
                 Telefone = aluno.Telefone
             }, this));

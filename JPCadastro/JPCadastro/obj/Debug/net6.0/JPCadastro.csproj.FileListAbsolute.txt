@@ -1,3 +1,9 @@
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\JPCadastro.csproj.AssemblyReference.cache
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\JPCadastro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\JPCadastro.AssemblyInfoInputs.cache
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\JPCadastro.AssemblyInfo.cs
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\JPCadastro.csproj.CoreCompileInputs.cache
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\JPCadastro.MvcApplicationPartsAssemblyInfo.cache
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\bin\Debug\net6.0\appsettings.Development.json
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\bin\Debug\net6.0\appsettings.json
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\bin\Debug\net6.0\JPCadastro.exe
@@ -26,13 +32,6 @@ C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\bin\Debug\net6.0\JPCadastro.Ope
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\bin\Debug\net6.0\JPCadastro.Core.pdb
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\bin\Debug\net6.0\JPCadastro.Infra.Data.pdb
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\bin\Debug\net6.0\JPCadastro.Operacional.pdb
-C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\JPCadastro.csproj.AssemblyReference.cache
-C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\JPCadastro.GeneratedMSBuildEditorConfig.editorconfig
-C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\JPCadastro.AssemblyInfoInputs.cache
-C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\JPCadastro.AssemblyInfo.cs
-C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\JPCadastro.csproj.CoreCompileInputs.cache
-C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\JPCadastro.MvcApplicationPartsAssemblyInfo.cs
-C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\JPCadastro.MvcApplicationPartsAssemblyInfo.cache
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\staticwebassets.build.json
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\staticwebassets.development.json
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro\obj\Debug\net6.0\scopedcss\bundle\JPCadastro.styles.css

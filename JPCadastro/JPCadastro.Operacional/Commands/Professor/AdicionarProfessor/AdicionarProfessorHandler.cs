@@ -50,7 +50,7 @@ namespace JPCadastro.Operacional.Commands.Professor.AdicionarProfessor
             _repositoryProfessor.Adcionar(professor);
 
             return Task.FromResult(new CommandResponse(new AdicionarProfessorResponse(
-                professor.Cpf, professor.Nome, "Professor Cadastrado Com Sucesso"), this));
+                professor.Id, professor.Nome, "Professor Cadastrado Com Sucesso"), this));
         }
     }
 }

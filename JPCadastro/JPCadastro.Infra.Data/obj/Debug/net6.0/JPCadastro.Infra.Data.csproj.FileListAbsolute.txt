@@ -1,3 +1,8 @@
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\obj\Debug\net6.0\JPCadastro.Infra.Data.csproj.AssemblyReference.cache
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\obj\Debug\net6.0\JPCadastro.Infra.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\obj\Debug\net6.0\JPCadastro.Infra.Data.AssemblyInfoInputs.cache
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\obj\Debug\net6.0\JPCadastro.Infra.Data.AssemblyInfo.cs
+C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\obj\Debug\net6.0\JPCadastro.Infra.Data.csproj.CoreCompileInputs.cache
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\bin\Debug\net6.0\JPCadastro.Infra.Data.deps.json
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\bin\Debug\net6.0\JPCadastro.Infra.Data.runtimeconfig.json
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\bin\Debug\net6.0\JPCadastro.Infra.Data.dll
@@ -6,11 +11,6 @@ C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\bin\Debug\net6.0\JPC
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\bin\Debug\net6.0\JPCadastro.Operacional.dll
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\bin\Debug\net6.0\JPCadastro.Core.pdb
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\bin\Debug\net6.0\JPCadastro.Operacional.pdb
-C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\obj\Debug\net6.0\JPCadastro.Infra.Data.csproj.AssemblyReference.cache
-C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\obj\Debug\net6.0\JPCadastro.Infra.Data.GeneratedMSBuildEditorConfig.editorconfig
-C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\obj\Debug\net6.0\JPCadastro.Infra.Data.AssemblyInfoInputs.cache
-C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\obj\Debug\net6.0\JPCadastro.Infra.Data.AssemblyInfo.cs
-C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\obj\Debug\net6.0\JPCadastro.Infra.Data.csproj.CoreCompileInputs.cache
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\obj\Debug\net6.0\JPCadastro.Infra.Data.csproj.CopyComplete
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\obj\Debug\net6.0\JPCadastro.Infra.Data.dll
 C:\Projetos\Git\JPCadastro\JPCadastro\JPCadastro.Infra.Data\obj\Debug\net6.0\refint\JPCadastro.Infra.Data.dll

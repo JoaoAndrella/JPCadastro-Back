@@ -49,7 +49,7 @@ namespace JPCadastro.Operacional.Commands.Aluno.AdicionarAluno
             _repositoryAluno.Adcionar(aluno);
 
             return Task.FromResult(new CommandResponse(new AdicionarAlunoResponse(
-                aluno.Cpf, "Aluno Cadastrado Com Sucesso"), this));
+                aluno.Id, "Aluno Cadastrado Com Sucesso"), this));
         }
     }
 }

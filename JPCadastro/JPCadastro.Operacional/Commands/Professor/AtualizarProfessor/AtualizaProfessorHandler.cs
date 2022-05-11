@@ -47,7 +47,7 @@ namespace JPCadastro.Operacional.Commands.Professor.AtualizarProfessor
             _repositoryProfessor.Atualizar(professor);
 
             return Task.FromResult(new CommandResponse(new AtualizarProfessorResponse(
-                professor.Cpf, professor.Nome, "Professor Atualizado Com Sucesso"), this));
+                professor.Id, professor.Nome, "Professor Atualizado Com Sucesso"), this));
         }
     }
 }

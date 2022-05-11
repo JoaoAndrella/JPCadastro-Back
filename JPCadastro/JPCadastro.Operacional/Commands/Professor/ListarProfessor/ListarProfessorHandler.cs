@@ -23,7 +23,7 @@ namespace JPCadastro.Operacional.Commands.Professor.ListarProfessor
 
             return Task.FromResult(new CommandResponse(colecaoProfessor.Select(p => new ListarProfessorResponse
             {
-                Cpf = p.Cpf,
+                Cpf = p.Id,
                 Nome = p.Nome,
                 Telefone = p.Telefone
             }), this));

@@ -8,8 +8,8 @@ namespace JPCadastro.Infra.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<AlunoEntity> builder)
         {
-            builder.Ignore(x => x.Id);
-            builder.HasKey(x => x.Cpf);
+            builder.HasKey(x => x.Id);
+            //builder.HasKey(x => x.Cpf);
             builder.Property(x => x.Nome)
                 .HasMaxLength(50)
                 .IsRequired();
