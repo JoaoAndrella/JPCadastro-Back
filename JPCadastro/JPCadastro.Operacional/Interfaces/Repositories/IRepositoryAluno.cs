@@ -5,6 +5,5 @@ namespace JPCadastro.Operacional.Interfaces.Repositories
 {
     public interface IRepositoryAluno : IRepositoryBase<AlunoEntity, string>
     {
-        
     }
 }

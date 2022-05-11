@@ -1,4 +1,5 @@
 ﻿using JPCadastro.Operacional.Entities.Aluno;
+using JPCadastro.Operacional.Entities.Professor;
 using Microsoft.EntityFrameworkCore;
 using prmToolkit.NotificationPattern;
 
@@ -15,6 +16,7 @@ namespace JPCadastro.Infra.Data.Context
         }
 
         public DbSet<AlunoEntity> AlunoSet { get; set; }
+        public DbSet<ProfessorEntity> ProfessorSet { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

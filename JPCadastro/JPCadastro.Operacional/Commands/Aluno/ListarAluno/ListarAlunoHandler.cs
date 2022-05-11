@@ -18,7 +18,6 @@ namespace JPCadastro.Operacional.Commands.Aluno.ListarAluno
         public Task<CommandResponse> Handle(ListarAlunoRequest request,
             CancellationToken cancellationToken)
         {
-
             //TESTANDO SE O ALUNO JÁ ESTA CADASTRADO
             var colecaoAluno = _repositoryAluno.ListarSemRastreamento();
 

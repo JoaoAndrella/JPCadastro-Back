@@ -37,6 +37,26 @@ namespace JPCadastro.Infra.Data.Migrations
 
                     b.ToTable("TAB_Aluno", (string)null);
                 });
+
+            modelBuilder.Entity("JPCadastro.Operacional.Entities.Professor.ProfessorEntity", b =>
+                {
+                    b.Property<string>("Cpf")
+                        .HasColumnType("varchar(95)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
+
+                    b.HasKey("Cpf");
+
+                    b.ToTable("TAB_Professor", (string)null);
+                });
 #pragma warning restore 612, 618
         }
     }

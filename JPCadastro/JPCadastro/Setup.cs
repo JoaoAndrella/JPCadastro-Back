@@ -40,7 +40,7 @@ namespace JPCadastro
         public static void ConfigureRepository(this IServiceCollection services)
         {
             services.AddTransient<IRepositoryAluno, RepositoryAluno>();
-
+            services.AddTransient<IRepositoryProfessor, RepositoryProfessor>();
         }
 
         public static void ConfigureMediatorJPCadastroOperacional(this IServiceCollection services)
