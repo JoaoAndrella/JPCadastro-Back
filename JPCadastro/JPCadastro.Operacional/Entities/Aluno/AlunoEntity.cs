@@ -7,6 +7,7 @@ namespace JPCadastro.Operacional.Entities.Aluno
         public string Cpf { get; private set; }
         public string Nome { get; private set; }
         public string Telefone { get; private set; }
+        public string Endereco { get; private set; }
         
         //CONSTRUTOR EF
         protected AlunoEntity() { }
