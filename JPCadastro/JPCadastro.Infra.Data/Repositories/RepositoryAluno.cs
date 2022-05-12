@@ -5,7 +5,7 @@ using JPCadastro.Operacional.Interfaces.Repositories;
 
 namespace JPCadastro.Infra.Data.Repositories
 {
-    public class RepositoryAluno : RepositoryBase<AlunoEntity, string>, IRepositoryAluno
+    public class RepositoryAluno : RepositoryBase<AlunoEntity, Guid>, IRepositoryAluno
     {
         public RepositoryAluno(JPCadastroContext context) : base(context)
         {

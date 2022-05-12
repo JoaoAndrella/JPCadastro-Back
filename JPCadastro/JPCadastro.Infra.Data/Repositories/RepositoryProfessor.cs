@@ -5,7 +5,7 @@ using JPCadastro.Operacional.Interfaces.Repositories;
 
 namespace JPCadastro.Infra.Data.Repositories
 {
-    public class RepositoryProfessor : RepositoryBase<ProfessorEntity, string>, IRepositoryProfessor
+    public class RepositoryProfessor : RepositoryBase<ProfessorEntity, Guid>, IRepositoryProfessor
     {
         public RepositoryProfessor(JPCadastroContext context) : base(context)
         {

@@ -27,16 +27,8 @@ namespace JPCadastro.Operacional.Commands.Aluno.AdicionarAluno
                 return Task.FromResult(new CommandResponse(this));
             }
 
-            //TESTANDO SE O ALUNO JÁ ESTA CADASTRADO
-            var aluno = _repositoryAluno.ObterPorId(request.Cpf);
-            if (aluno!=null)
-            {
-                AddNotification("AdicionarAlunoHandler", "Aluno Já Está Cadastrado");
-                return Task.FromResult(new CommandResponse(this));
-            }
-
             //CRIANDO O OBJT ALUNO
-            aluno = new AlunoEntity(
+           var aluno = new AlunoEntity(
                 request.Cpf,
                 request.Nome,
                 request.Telefone
@@ -49,7 +41,7 @@ namespace JPCadastro.Operacional.Commands.Aluno.AdicionarAluno
             _repositoryAluno.Adcionar(aluno);
 
             return Task.FromResult(new CommandResponse(new AdicionarAlunoResponse(
-                aluno.Id, "Aluno Cadastrado Com Sucesso"), this));
+                aluno.Id, aluno.Cpf, "Aluno Cadastrado Com Sucesso"), this));
         }
     }
 }

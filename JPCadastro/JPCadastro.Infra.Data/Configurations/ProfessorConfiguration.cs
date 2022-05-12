@@ -9,7 +9,9 @@ namespace JPCadastro.Infra.Data.Configurations
         public void Configure(EntityTypeBuilder<ProfessorEntity> builder)
         {
             builder.HasKey(x => x.Id);
-           //builder.HasKey(x => x.Cpf);
+            builder.Property(x => x.Cpf)
+                .HasMaxLength(20)
+                .IsRequired();
             builder.Property(x => x.Nome)
                 .HasMaxLength(50)
                 .IsRequired();

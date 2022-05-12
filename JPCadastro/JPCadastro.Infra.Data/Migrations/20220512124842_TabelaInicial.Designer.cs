@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JPCadastro.Infra.Data.Migrations
 {
     [DbContext(typeof(JPCadastroContext))]
-    [Migration("20220511185816_TabelaInicial")]
+    [Migration("20220512124842_TabelaInicial")]
     partial class TabelaInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,8 +23,14 @@ namespace JPCadastro.Infra.Data.Migrations
 
             modelBuilder.Entity("JPCadastro.Operacional.Entities.Aluno.AlunoEntity", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("varchar(95)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Cpf")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -55,8 +61,8 @@ namespace JPCadastro.Infra.Data.Migrations
                     b.Property<sbyte>("Periodo")
                         .HasColumnType("tinyint");
 
-                    b.Property<string>("ProfessorId")
-                        .HasColumnType("varchar(95)");
+                    b.Property<Guid>("ProfessorId")
+                        .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
@@ -67,8 +73,14 @@ namespace JPCadastro.Infra.Data.Migrations
 
             modelBuilder.Entity("JPCadastro.Operacional.Entities.Professor.ProfessorEntity", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("varchar(95)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Cpf")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
 
                     b.Property<string>("Nome")
                         .IsRequired()

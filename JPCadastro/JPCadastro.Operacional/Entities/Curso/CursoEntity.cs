@@ -8,7 +8,6 @@ namespace JPCadastro.Operacional.Entities.Curso
     {
         public string Nome { get; private set; }
         public Periodo Periodo { get; private set; }
-        //public string ProfessorId { get; private set; }
         public virtual ProfessorEntity Professor { get; private set; }
 
         public CursoEntity()

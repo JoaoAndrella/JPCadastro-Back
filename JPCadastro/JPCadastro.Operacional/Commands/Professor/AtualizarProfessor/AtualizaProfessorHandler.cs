@@ -27,7 +27,7 @@ namespace JPCadastro.Operacional.Commands.Professor.AtualizarProfessor
             }
 
             //TESTANDO SE O Professor JÁ ESTA CADASTRADO
-            var professor = _repositoryProfessor.ObterPorId(request.Cpf);
+            var professor = _repositoryProfessor.ObterPorId(request.Id);
             if (professor==null)
             {
                 AddNotification("AtualizarProfessorHandler", "Professor Não Localizado");
@@ -36,6 +36,7 @@ namespace JPCadastro.Operacional.Commands.Professor.AtualizarProfessor
 
             //CRIANDO O OBJT Professor
             professor.Atualizar(
+                request.Cpf,
                 request.Nome,
                 request.Telefone
                 );
@@ -47,7 +48,7 @@ namespace JPCadastro.Operacional.Commands.Professor.AtualizarProfessor
             _repositoryProfessor.Atualizar(professor);
 
             return Task.FromResult(new CommandResponse(new AtualizarProfessorResponse(
-                professor.Id, professor.Nome, "Professor Atualizado Com Sucesso"), this));
+              professor.Id, professor.Cpf, professor.Nome, "Professor Atualizado Com Sucesso"), this));
         }
     }
 }

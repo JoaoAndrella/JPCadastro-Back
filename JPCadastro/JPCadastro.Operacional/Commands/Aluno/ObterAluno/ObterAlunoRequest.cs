@@ -5,10 +5,10 @@ namespace JPCadastro.Operacional.Commands.Aluno.ObterAluno
 {
     public class ObterAlunoRequest : IRequest<CommandResponse>
     {
-        public string Cpf { get; }
-        public ObterAlunoRequest(string cpf)
+        public Guid Id { get; }
+        public ObterAlunoRequest(Guid id)
         {
-            Cpf = cpf;
+            Id=id;
         }
     }
 }

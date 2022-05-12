@@ -23,10 +23,11 @@ namespace JPCadastro.Operacional.Commands.Aluno.ListarAluno
 
             return Task.FromResult(new CommandResponse(colecaoAluno.Select(p => new ListarAlunoResponse
             {
-                Cpf = p.Id,
+                Id= p.Id,
+                Cpf = p.Cpf,
                 Nome = p.Nome,
                 Telefone = p.Telefone
-            }), this));
+            }), this)); ;
         }
     }
 }

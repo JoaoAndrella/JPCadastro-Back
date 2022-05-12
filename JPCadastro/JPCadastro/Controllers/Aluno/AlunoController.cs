@@ -40,15 +40,15 @@ namespace JPCadastro.Controllers
         }
 
         [HttpGet("obter")]
-        public async Task<IActionResult> Obter([FromQuery] string cpf)
+        public async Task<IActionResult> Obter([FromQuery] Guid id)
         {
-            return JPGetActionResult(await _mediator.Send(new ObterAlunoRequest(cpf)));
+            return JPGetActionResult(await _mediator.Send(new ObterAlunoRequest(id)));
         }
 
         [HttpDelete("remover")]
-        public async Task<IActionResult> Remover([FromQuery] string cpf)
+        public async Task<IActionResult> Remover([FromQuery] Guid id)
         {
-            return JPDeletActionResult(await _mediator.Send(new RemoverAlunoRequest(cpf)));
+            return JPDeletActionResult(await _mediator.Send(new RemoverAlunoRequest(id)));
         }
     }
 }

@@ -26,7 +26,7 @@ namespace JPCadastro.Operacional.Commands.Aluno.ObterAluno
             }
 
             //TESTANDO SE O ALUNO JÁ ESTA CADASTRADO
-            var professor = _repositoryProfessor.ObterPorId(request.Cpf);
+            var professor = _repositoryProfessor.ObterPorId(request.Id);
 
             if (professor==null)
             {
@@ -36,7 +36,8 @@ namespace JPCadastro.Operacional.Commands.Aluno.ObterAluno
 
             return Task.FromResult(new CommandResponse(new ObterProfessorResponse
             {
-                Cpf = professor.Id,
+                Id= professor.Id,
+                Cpf = professor.Cpf,
                 Nome = professor.Nome,
                 Telefone = professor.Telefone
             }, this));

@@ -5,11 +5,11 @@ namespace JPCadastro.Operacional.Commands.Aluno.RemoverAluno
 {
     public class RemoverAlunoRequest : IRequest<CommandResponse>
     {
-        public string Cpf { get; }
+        public Guid Id { get; }
 
-        public RemoverAlunoRequest(string cpf)
+        public RemoverAlunoRequest(Guid id)
         {
-            Cpf=cpf;
+            Id=id;
         }
     }
 }

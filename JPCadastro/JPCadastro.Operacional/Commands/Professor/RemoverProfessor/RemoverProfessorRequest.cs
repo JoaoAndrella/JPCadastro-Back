@@ -5,10 +5,10 @@ namespace JPCadastro.Operacional.Commands.Professor.RemoverProfessor
 {
     public class RemoverProfessorRequest : IRequest<CommandResponse>
     {
-        public string Cpf { get; }
-        public RemoverProfessorRequest(string cpf)
+        public Guid Id { get; }
+        public RemoverProfessorRequest(Guid id)
         {
-            Cpf=cpf; 
+            Id = id;
         }
 
     }

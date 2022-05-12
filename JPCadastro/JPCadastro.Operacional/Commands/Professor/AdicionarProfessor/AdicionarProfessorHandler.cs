@@ -28,16 +28,8 @@ namespace JPCadastro.Operacional.Commands.Professor.AdicionarProfessor
                 return Task.FromResult(new CommandResponse(this));
             }
 
-            //TESTANDO SE O Professor JÁ ESTA CADASTRADO
-            var professor = _repositoryProfessor.ObterPorId(request.Cpf);
-            if (professor!=null)
-            {
-                AddNotification("AdicionarProfessorHandler", "Professor Já Está Cadastrado");
-                return Task.FromResult(new CommandResponse(this));
-            }
-
             //CRIANDO O OBJT Professor
-            professor = new ProfessorEntity(
+           var professor = new ProfessorEntity(
                 request.Cpf,
                 request.Nome,
                 request.Telefone
@@ -50,7 +42,7 @@ namespace JPCadastro.Operacional.Commands.Professor.AdicionarProfessor
             _repositoryProfessor.Adcionar(professor);
 
             return Task.FromResult(new CommandResponse(new AdicionarProfessorResponse(
-                professor.Id, professor.Nome, "Professor Cadastrado Com Sucesso"), this));
+               professor.Id, professor.Cpf, professor.Nome, "Professor Cadastrado Com Sucesso"), this));
         }
     }
 }

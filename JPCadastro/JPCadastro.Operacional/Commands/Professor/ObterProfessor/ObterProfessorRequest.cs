@@ -5,10 +5,10 @@ namespace JPCadastro.Operacional.Commands.Professor.ObterProfessor
 {
     public class ObterProfessorRequest : IRequest<CommandResponse>
     {
-        public string Cpf { get; set; }
-        public ObterProfessorRequest(string cpf)
+        public Guid Id { get; set; }
+        public ObterProfessorRequest(Guid id)
         {
-            Cpf=cpf;
+            Id=id;
         }
     }
 }

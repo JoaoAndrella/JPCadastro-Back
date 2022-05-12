@@ -28,7 +28,7 @@ namespace JPCadastro.Operacional.Commands.Aluno.RemoverAluno
             }
 
             //TESTANDO SE O ALUNO JÁ ESTA CADASTRADO
-            var aluno = _repositoryAluno.ObterPorId(request.Cpf);
+            var aluno = _repositoryAluno.ObterPorId(request.Id);
             if (aluno==null)
             {
                 AddNotification("RemoverAlunoHandler", "Aluno não localizado");

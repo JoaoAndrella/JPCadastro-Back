@@ -18,7 +18,6 @@ namespace JPCadastro.Operacional.Commands.Professor.RemoverProfessor
         public Task<CommandResponse> Handle(RemoverProfessorRequest request,
             CancellationToken cancellationToken)
         {
-
             //TESTANDO SE O REQUEST É NULO
             if (request==null)
             {
@@ -27,7 +26,7 @@ namespace JPCadastro.Operacional.Commands.Professor.RemoverProfessor
             }
 
             //TESTANDO SE O Professor JÁ ESTA CADASTRADO
-            var professor = _repositoryProfessor.ObterPorId(request.Cpf);
+            var professor = _repositoryProfessor.ObterPorId(request.Id);
             if (professor==null)
             {
                 AddNotification("RemoverProfessorHandler", "Professor não localizado");

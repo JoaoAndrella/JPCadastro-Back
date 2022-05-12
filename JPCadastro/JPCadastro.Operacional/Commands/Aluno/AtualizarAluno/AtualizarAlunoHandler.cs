@@ -27,7 +27,7 @@ namespace JPCadastro.Operacional.Commands.Aluno.AtualizarAluno
             }
 
             //TESTANDO SE O ALUNO JÁ ESTA CADASTRADO
-            var aluno = _repositoryAluno.ObterPorId(request.Cpf);
+            var aluno = _repositoryAluno.ObterPorId(request.Id);
             if (aluno==null)
             {
                 AddNotification("AtualizarAlunoHandler", "Aluno Não Localizado");
@@ -36,6 +36,7 @@ namespace JPCadastro.Operacional.Commands.Aluno.AtualizarAluno
 
             //CRIANDO O OBJT ALUNO
             aluno.Atualizar(
+                request.Cpf,
                 request.Nome,
                 request.Telefone
                 );
@@ -47,7 +48,7 @@ namespace JPCadastro.Operacional.Commands.Aluno.AtualizarAluno
             _repositoryAluno.Atualizar(aluno);
 
             return Task.FromResult(new CommandResponse(new AtualizarAlunoResponse(
-                aluno.Id, "Aluno Atualizado Com Sucesso"), this));
+                aluno.Id, aluno.Cpf, "Aluno Atualizado Com Sucesso"), this));
         }
     }
 }

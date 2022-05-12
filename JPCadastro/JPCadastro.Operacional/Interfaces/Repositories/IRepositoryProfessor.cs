@@ -3,7 +3,7 @@ using JPCadastro.Operacional.Entities.Professor;
 
 namespace JPCadastro.Operacional.Interfaces.Repositories
 {
-    public interface IRepositoryProfessor : IRepositoryBase<ProfessorEntity, string>
+    public interface IRepositoryProfessor : IRepositoryBase<ProfessorEntity, Guid>
     {
     }
 }
