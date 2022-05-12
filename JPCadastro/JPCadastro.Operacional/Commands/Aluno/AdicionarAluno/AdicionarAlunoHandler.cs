@@ -11,6 +11,7 @@ namespace JPCadastro.Operacional.Commands.Aluno.AdicionarAluno
     {
         private readonly IRepositoryAluno _repositoryAluno;
 
+
         public AdicionarAlunoHandler(IRepositoryAluno repositoryAluno)
         {
             _repositoryAluno=repositoryAluno;
