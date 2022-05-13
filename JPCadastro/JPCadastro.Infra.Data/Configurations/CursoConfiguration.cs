@@ -1,11 +1,10 @@
-﻿using JPCadastro.Operacional.Entities.Aluno;
-using JPCadastro.Operacional.Entities.Curso;
+﻿using JPCadastro.Operacional.Entities.Curso;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace JPCadastro.Infra.Data.Configurations
 {
-    public class CursoConfiguration : IEntityTypeConfiguration<CursoEntity> 
+    public class CursoConfiguration : IEntityTypeConfiguration<CursoEntity>
     {
         public void Configure(EntityTypeBuilder<CursoEntity> builder)
         {
