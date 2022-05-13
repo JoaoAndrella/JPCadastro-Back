@@ -8,6 +8,6 @@ namespace JPCadastro.Operacional.Commands.Curso.Atualizar
     {
         public string Nome { get; set; }
         public Periodo Periodo { get; set; }
-        public Guid ProfessorId { get; set;}
+        public Guid? ProfessorId { get; set;}
     }
 }

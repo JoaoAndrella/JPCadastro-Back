@@ -8,14 +8,12 @@ namespace JPCadastro.Operacional.Entities.Curso
     {
         public string Nome { get; private set; }
         public Periodo Periodo { get; private set; }
-        public Guid ProfessorId { get; private set; }
+        public Guid? ProfessorId { get; private set; }
         public virtual ProfessorEntity Professor { get; private set; }
 
-        public CursoEntity()
-        {
-        }
+        public CursoEntity() {}
 
-        public CursoEntity(string nome, Periodo periodoCurso, Guid professorId)
+        public CursoEntity(string nome, Periodo periodoCurso, Guid? professorId)
         {
             Id=Guid.NewGuid();
             Nome=nome;
@@ -23,10 +21,11 @@ namespace JPCadastro.Operacional.Entities.Curso
             ProfessorId=professorId;
         }
 
-        public void Atualizar(string nome, Periodo periodoCurso)
+        public void Atualizar(string nome, Periodo periodoCurso, Guid? professorId)
         {
             Nome=nome;
             Periodo=periodoCurso;
+            ProfessorId=professorId;
         }
     }
 }

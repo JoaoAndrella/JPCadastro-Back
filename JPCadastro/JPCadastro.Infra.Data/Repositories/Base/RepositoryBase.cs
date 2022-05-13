@@ -2,6 +2,7 @@
 using JPCadastro.Core.Interfaces.Base;
 using JPCadastro.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace JPCadastro.Infra.Data.Repositories.Base
 {
@@ -25,6 +26,21 @@ namespace JPCadastro.Infra.Data.Repositories.Base
         public void Atualizar(TEntity entity)
         {
             DbSet.Update(entity);
+        }
+
+        public bool Existe(Func<TEntity, bool> onde)
+        {
+            return DbSet.Any(onde);
+        }
+
+        public bool Existe(Func<TEntity, bool> onde, params Expression<Func<TEntity, object>>[] incluirPropriedadesNavegacao)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Existe(Func<TEntity, bool> onde, params string[] incluirPropriedadesNavegacao)
+        {
+            throw new NotImplementedException();
         }
 
         public IEnumerable<TEntity> Listar()

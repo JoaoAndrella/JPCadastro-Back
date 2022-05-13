@@ -1,5 +1,4 @@
 ﻿using JPCadastro.Core.Entities;
-using JPCadastro.Operacional.Entities.Curso;
 
 namespace JPCadastro.Operacional.Entities.Professor
 {

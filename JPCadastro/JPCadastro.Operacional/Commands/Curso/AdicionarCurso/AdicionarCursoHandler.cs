@@ -31,14 +31,16 @@ namespace JPCadastro.Operacional.Commands.Curso.AdicionarCurso
             }
 
             //Verificando se o Professor Existe
-            var professor = _repositoryProfessor.ObterPorId(request.ProfessorId);
-            if (professor==null)
+
+            if (request.ProfessorId!=null)
             {
-                AddNotification("AdicionarCursoHandler", "Professor não localizado");
-                return Task.FromResult(new CommandResponse(this));
+                if (!_repositoryProfessor.Existe(p => p.Id == request.ProfessorId))
+                {
+                    AddNotification("AdicionarCursoHandler", "Professor não Localizado");
+                    return Task.FromResult(new CommandResponse(this));
+                }
             }
 
-            //CRIANDO O OBJT Curso
             var curso = new CursoEntity(
                  request.Nome,
                  request.Periodo,
