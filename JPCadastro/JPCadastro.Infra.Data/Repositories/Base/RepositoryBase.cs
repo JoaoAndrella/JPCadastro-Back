@@ -4,6 +4,7 @@ using JPCadastro.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
+
 namespace JPCadastro.Infra.Data.Repositories.Base
 {
     public class RepositoryBase<TEntity, TId> : IRepositoryBase<TEntity, TId>
@@ -46,6 +47,18 @@ namespace JPCadastro.Infra.Data.Repositories.Base
         public IEnumerable<TEntity> Listar()
         {
             return DbSet.AsEnumerable();
+        }
+
+        public IEnumerable<TEntity> ListarPorSemRastreamento(Func<TEntity, bool> onde, Func<TEntity, object> ordem, bool ascendente, params Expression<Func<TEntity, object>>[] incluirPropriedadesNavegacao)
+        {
+            if (incluirPropriedadesNavegacao.Any())
+                return ascendente
+                    ? Include(DbSet, incluirPropriedadesNavegacao).AsNoTracking().Where(onde).OrderBy(ordem).AsEnumerable()
+                    : Include(DbSet, incluirPropriedadesNavegacao).AsNoTracking().Where(onde).OrderByDescending(ordem).AsEnumerable();
+
+            return ascendente
+                ? DbSet.AsNoTracking().Where(onde).OrderBy(ordem).AsEnumerable()
+                : DbSet.AsNoTracking().Where(onde).OrderByDescending(ordem).AsEnumerable();
         }
 
         public IEnumerable<TEntity> ListarSemRastreamento()
