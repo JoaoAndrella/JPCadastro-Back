@@ -1,4 +1,5 @@
 ﻿using JPCadastro.Core.Entities;
+using System.Linq.Expressions;
 
 namespace JPCadastro.Core.Interfaces.Base
 {
@@ -15,5 +16,8 @@ namespace JPCadastro.Core.Interfaces.Base
         TEntity ObterPorId(TId id);
         TEntity ObterPorSemRastreamento(TId id);
         IEnumerable<TEntity> ListarSemRastreamento();
+        bool Existe(Func<TEntity, bool> onde);
+        bool Existe(Func<TEntity, bool> onde, params Expression<Func<TEntity, object>>[] incluirPropriedadesNavegacao);
+        bool Existe(Func<TEntity, bool> onde, params string[] incluirPropriedadesNavegacao);
     }
 }
