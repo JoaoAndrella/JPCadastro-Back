@@ -9,6 +9,7 @@ namespace JPCadastro.Operacional.Commands.Curso.ListarCurso
         IRequestHandler<ListarCursoRequest, CommandResponse>
     {
         private readonly IRepositoryCurso _repositoryCurso;
+        private readonly IRepositoryProfessor _repositoryProfessor;
 
         public ListarCursoHandler(IRepositoryCurso repositoryCurso)
         {
@@ -19,15 +20,18 @@ namespace JPCadastro.Operacional.Commands.Curso.ListarCurso
             CancellationToken cancellationToken)
         {
             //TESTANDO SE O Curso JÁ ESTA CADASTRADO
-            var colecaoCurso = _repositoryCurso.ListarSemRastreamento();
+            var colecaoCurso = _repositoryCurso.ListarPorSemRastreamento(p => p.ProfessorId == request.ProfessorId, p => p.Professor).ToList();
 
-            return Task.FromResult(new CommandResponse(colecaoCurso.Select(p => new ListarCursoResponse
+            var listarCursoResponse = colecaoCurso.Select(p => new ListarCursoResponse
             {
-               Id= p.Id,
-               Nome= p.Nome,
-               Periodo=  p.Periodo,
-               ProfessorId= p.ProfessorId
-            }), this)); ;
+                Id= p.Id,
+                Nome= p.Nome,
+                Periodo=  p.Periodo,
+                ProfessorId= p.ProfessorId,
+                PorfessorNome=p.ProfessorNome
+            });
+
+            return Task.FromResult(new CommandResponse(listarCursoResponse, this));
         }
     }
 }

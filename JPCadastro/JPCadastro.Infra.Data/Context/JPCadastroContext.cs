@@ -22,6 +22,12 @@ namespace JPCadastro.Infra.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //setar o comportamento do Delete em tabelas com relacionamentos
+            foreach (var foreignkey in modelBuilder.Model.GetEntityTypes().SelectMany(r => r.GetForeignKeys()))
+            {
+                foreignkey.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+
             modelBuilder.Ignore<Notification>();
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(JPCadastroContext).Assembly);
             base.OnModelCreating(modelBuilder);

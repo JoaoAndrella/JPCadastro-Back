@@ -9,16 +9,18 @@ namespace JPCadastro.Operacional.Entities.Curso
         public string Nome { get; private set; }
         public Periodo Periodo { get; private set; }
         public Guid? ProfessorId { get; private set; }
+        public string? ProfessorNome { get; private set; }
         public virtual ProfessorEntity Professor { get; private set; }
 
         public CursoEntity() {}
 
-        public CursoEntity(string nome, Periodo periodoCurso, Guid? professorId)
+        public CursoEntity(string nome, Periodo periodoCurso, Guid? professorId, string? professorNome)
         {
             Id=Guid.NewGuid();
             Nome=nome;
             Periodo=periodoCurso;
             ProfessorId=professorId;
+            ProfessorNome=professorNome;
         }
 
         public void Atualizar(string nome, Periodo periodoCurso, Guid? professorId)

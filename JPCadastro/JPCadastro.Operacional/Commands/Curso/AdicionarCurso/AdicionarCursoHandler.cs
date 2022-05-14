@@ -41,10 +41,20 @@ namespace JPCadastro.Operacional.Commands.Curso.AdicionarCurso
                 }
             }
 
+            if (request.ProfessorNome!=null)
+            {
+                if (!_repositoryProfessor.Existe(p => p.Nome == request.ProfessorNome))
+                {
+                    AddNotification("AdicionarCursoHandler", "Professor não Localizado");
+                    return Task.FromResult(new CommandResponse(this));
+                }
+            }
+
             var curso = new CursoEntity(
                  request.Nome,
                  request.Periodo,
-                 request.ProfessorId
+                 request.ProfessorId,
+                 request.ProfessorNome
                  );
             AddNotifications(curso);
 
