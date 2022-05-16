@@ -61,7 +61,7 @@ namespace JPCadastro.Operacional.Commands.Curso.AdicionarCurso
             if (IsInvalid())
                 return Task.FromResult(new CommandResponse(this));
 
-            _repositoryCurso.Adcionar(curso);
+            _repositoryCurso.Adicionar(curso);
 
             return Task.FromResult(new CommandResponse(new AdicionarCursoResponse(
                 curso.Id, curso.Nome, "Curso Cadastrado Com Sucesso"), this));

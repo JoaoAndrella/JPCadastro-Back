@@ -39,7 +39,7 @@ namespace JPCadastro.Operacional.Commands.Aluno.AdicionarAluno
             if (IsInvalid())
                 return Task.FromResult(new CommandResponse(this));
 
-            _repositoryAluno.Adcionar(aluno);
+            _repositoryAluno.Adicionar(aluno);
 
             return Task.FromResult(new CommandResponse(new AdicionarAlunoResponse(
                 aluno.Id, aluno.Cpf, "Aluno Cadastrado Com Sucesso"), this));
