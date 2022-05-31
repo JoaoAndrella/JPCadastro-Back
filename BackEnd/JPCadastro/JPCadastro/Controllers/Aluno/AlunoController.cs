@@ -39,14 +39,14 @@ namespace JPCadastro.Controllers
             return JPGetActionResult(await _mediator.Send(new ListarAlunoRequest()));
         }
 
-        [HttpGet("obter")]
-        public async Task<IActionResult> Obter([FromQuery] Guid id)
+        [HttpGet("obter/{id}")]
+        public async Task<IActionResult> Obter(Guid id)
         {
             return JPGetActionResult(await _mediator.Send(new ObterAlunoRequest(id)));
         }
 
-        [HttpDelete("remover")]
-        public async Task<IActionResult> Remover([FromQuery] Guid id)
+        [HttpDelete("remover/{id}")]    
+        public async Task<IActionResult> Remover(Guid id)
         {
             return JPDeletActionResult(await _mediator.Send(new RemoverAlunoRequest(id)));
         }

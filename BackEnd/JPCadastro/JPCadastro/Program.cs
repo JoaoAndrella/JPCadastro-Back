@@ -28,6 +28,11 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.UseCors(x => x
+    .AllowAnyOrigin()
+    .AllowAnyMethod() // Get, Post, Put, Delete, etc...
+    .AllowAnyHeader());
+
 app.MapControllers();
 
 app.Run();

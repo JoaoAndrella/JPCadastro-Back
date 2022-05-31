@@ -30,20 +30,10 @@ namespace JPCadastro.Operacional.Commands.Curso.AdicionarCurso
                 return Task.FromResult(new CommandResponse(this));
             }
 
-            //Verificando se o Professor Existe
-
-            if (request.ProfessorId!=null)
+            if (request.ProfessorId.HasValue)
             {
-                if (!_repositoryProfessor.Existe(p => p.Id == request.ProfessorId))
-                {
-                    AddNotification("AdicionarCursoHandler", "Professor não Localizado");
-                    return Task.FromResult(new CommandResponse(this));
-                }
-            }
-
-            if (request.ProfessorNome!=null)
-            {
-                if (!_repositoryProfessor.Existe(p => p.Nome == request.ProfessorNome))
+                var professor = _repositoryProfessor.ObterPorId(request.ProfessorId.Value);
+                if (professor!=null)
                 {
                     AddNotification("AdicionarCursoHandler", "Professor não Localizado");
                     return Task.FromResult(new CommandResponse(this));
