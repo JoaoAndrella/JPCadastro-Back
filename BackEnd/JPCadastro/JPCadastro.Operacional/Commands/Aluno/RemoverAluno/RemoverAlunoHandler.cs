@@ -38,7 +38,7 @@ namespace JPCadastro.Operacional.Commands.Aluno.RemoverAluno
             _repositoryAluno.Remover(aluno);
 
             return Task.FromResult(new CommandResponse(new RemoverAlunoResponse(
-                "Aluno Removido Com Sucesso"), this));
+              aluno.Cpf,  "Aluno Removido Com Sucesso"), this)); ;
         }
     }
 }
