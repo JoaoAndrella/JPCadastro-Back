@@ -27,7 +27,7 @@ namespace JPCadastro.Operacional.Commands.Curso.ListarCurso
                 Nome= p.Nome,
                 Periodo=  p.Periodo,
                 ProfessorId= p.ProfessorId,
-                PorfessorNome=p.ProfessorNome
+                ProfessorNome=p.Professor?.Nome
             }), this));
         }
     }

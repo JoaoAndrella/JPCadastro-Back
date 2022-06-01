@@ -33,7 +33,7 @@ namespace JPCadastro.Operacional.Commands.Curso.AdicionarCurso
             if (request.ProfessorId.HasValue)
             {
                 var professor = _repositoryProfessor.ObterPorId(request.ProfessorId.Value);
-                if (professor!=null)
+                if (professor==null)
                 {
                     AddNotification("AdicionarCursoHandler", "Professor não Localizado");
                     return Task.FromResult(new CommandResponse(this));
