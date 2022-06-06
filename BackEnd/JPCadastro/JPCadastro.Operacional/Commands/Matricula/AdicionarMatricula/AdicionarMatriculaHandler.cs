@@ -27,7 +27,7 @@ namespace JPCadastro.Operacional.Commands.Matricula.AdicionarMatricula
                 return Task.FromResult(new CommandResponse(this));
             }
 
-            //CRIANDO O OBJT Matricula
+            //CRIANDO O OBJT MATRICULA
             var Matricula = new MatriculaEntity(
                 request.AlunoId,
                 request.CursoId,

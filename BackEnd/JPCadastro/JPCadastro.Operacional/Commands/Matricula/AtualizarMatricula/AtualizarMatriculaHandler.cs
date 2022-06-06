@@ -32,7 +32,7 @@ namespace JPCadastro.Operacional.Commands.Matricula.AtualizarMatricula
                 return Task.FromResult(new CommandResponse(this));
             }
 
-            //TESTANDO SE O Matricula JÁ ESTA CADASTRADO
+            //TESTANDO SE O MATRICULA JÁ ESTA CADASTRADO
             var Matricula = _repositoryMatricula.ObterPorId(request.Id);
             if (Matricula==null)
             {
@@ -60,7 +60,7 @@ namespace JPCadastro.Operacional.Commands.Matricula.AtualizarMatricula
                 }
             }
 
-            //CRIANDO O OBJT Matricula
+            //CRIANDO O OBJT MATRICULA
             Matricula.Atualizar(
                 request.CursoId,
                 request.Status

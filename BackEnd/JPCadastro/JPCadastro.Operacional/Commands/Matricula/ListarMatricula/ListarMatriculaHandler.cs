@@ -19,7 +19,7 @@ namespace JPCadastro.Operacional.Commands.Matricula.ListarMatricula
         public Task<CommandResponse> Handle(ListarMatriculaRequest request,
             CancellationToken cancellationToken)
         {
-            //TESTANDO SE O Matricula JÁ ESTA CADASTRADO
+            //TESTANDO SE O MATRICULA JÁ ESTA CADASTRADO
             var colecaoMatricula = _repositoryMatricula.ListarSemRastreamento(p => p.Aluno, p => p.Curso);
 
             return Task.FromResult(new CommandResponse(colecaoMatricula.Select(p => new ListarMatriculaResponse

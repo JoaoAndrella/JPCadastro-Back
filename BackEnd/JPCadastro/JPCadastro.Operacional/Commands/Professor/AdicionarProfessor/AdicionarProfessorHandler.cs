@@ -28,7 +28,7 @@ namespace JPCadastro.Operacional.Commands.Professor.AdicionarProfessor
                 return Task.FromResult(new CommandResponse(this));
             }
 
-            //CRIANDO O OBJT Professor
+            //CRIANDO O OBJT PROFESSOR
            var professor = new ProfessorEntity(
                 request.Cpf,
                 request.Nome,

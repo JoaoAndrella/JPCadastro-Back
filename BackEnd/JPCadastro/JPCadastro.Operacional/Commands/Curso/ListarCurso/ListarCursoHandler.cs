@@ -19,7 +19,7 @@ namespace JPCadastro.Operacional.Commands.Curso.ListarCurso
         public Task<CommandResponse> Handle(ListarCursoRequest request,
             CancellationToken cancellationToken)
         {
-            //TESTANDO SE O Curso JÁ ESTA CADASTRADO
+            //TESTANDO SE O CURSO JÁ ESTA CADASTRADO
             var colecaoCurso = _repositoryCurso.ListarSemRastreamento(p => p.Professor);
 
             return Task.FromResult(new CommandResponse(colecaoCurso.Select(p => new ListarCursoResponse

@@ -24,7 +24,7 @@ namespace JPCadastro.Operacional.Commands.Curso.ObterCurso
                 return Task.FromResult(new CommandResponse(this));
             }
 
-            //TESTANDO SE O Curso JÁ ESTA CADASTRADO
+            //TESTANDO SE O CURSO JÁ ESTA CADASTRADO
             var curso = _repositoryCurso.ObterPorId(request.Id);
 
             if (curso==null)

@@ -27,7 +27,7 @@ namespace JPCadastro.Operacional.Commands.Curso.AtualizarCurso
                 return Task.FromResult(new CommandResponse(this));
             }
 
-            //TESTANDO SE O Curso JÁ ESTA CADASTRADO
+            //TESTANDO SE O CURSO JÁ ESTA CADASTRADO
             var curso = _repositoryCurso.ObterPorId(request.Id);
             if (curso==null)
             {
@@ -45,7 +45,7 @@ namespace JPCadastro.Operacional.Commands.Curso.AtualizarCurso
                 }
             }
 
-            //CRIANDO O OBJT Curso
+            //CRIANDO O OBJT CURSO
             curso.Atualizar(
                 request.Nome,
                 request.Periodo,

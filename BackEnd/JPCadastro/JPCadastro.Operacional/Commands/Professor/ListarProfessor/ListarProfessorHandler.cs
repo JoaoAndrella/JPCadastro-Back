@@ -18,7 +18,7 @@ namespace JPCadastro.Operacional.Commands.Professor.ListarProfessor
         public Task<CommandResponse> Handle(ListarProfessorRequest request,
             CancellationToken cancellationToken)
         {
-            //TESTANDO SE O Professor JÁ ESTA CADASTRADO
+            //TESTANDO SE O PROFESSOR JÁ ESTA CADASTRADO
             var colecaoProfessor = _repositoryProfessor.ListarSemRastreamento();
 
             return Task.FromResult(new CommandResponse(colecaoProfessor.Select(p => new ListarProfessorResponse

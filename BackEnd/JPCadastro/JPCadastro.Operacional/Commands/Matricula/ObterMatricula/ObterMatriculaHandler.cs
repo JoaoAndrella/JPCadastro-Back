@@ -24,7 +24,7 @@ namespace JPCadastro.Operacional.Commands.Matricula.ObterMatricula
                 return Task.FromResult(new CommandResponse(this));
             }
 
-            //TESTANDO SE O Matricula JÁ ESTA CADASTRADA
+            //TESTANDO SE O MATRICULA JÁ ESTA CADASTRADA
             var Matricula = _repositoryMatricula.ObterPorId(request.Id);
 
             if (Matricula==null)

@@ -25,7 +25,7 @@ namespace JPCadastro.Operacional.Commands.Professor.RemoverProfessor
                 return Task.FromResult(new CommandResponse(this));
             }
 
-            //TESTANDO SE O Professor JÁ ESTA CADASTRADO
+            //TESTANDO SE O PROFESSOR JÁ ESTA CADASTRADO
             var professor = _repositoryProfessor.ObterPorId(request.Id);
             if (professor==null)
             {
