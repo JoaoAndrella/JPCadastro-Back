@@ -36,6 +36,9 @@ namespace JPCadastro.Operacional.Commands.Curso.ObterCurso
             return Task.FromResult(new CommandResponse(new ObterCursoResponse
             {
                 Id = curso.Id,
+                Nome = curso.Nome,
+                Periodo = curso.Periodo,
+                ProfessorId = curso.ProfessorId
             }, this));
         }
     }

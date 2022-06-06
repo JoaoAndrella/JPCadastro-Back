@@ -38,14 +38,14 @@ namespace JPCadastro.Controllers.Curso
             return JPGetActionResult(await _mediator.Send(new ListarCursoRequest()));
         }
 
-        [HttpGet("obter")]
-        public async Task<IActionResult> Obter([FromQuery] Guid id)
+        [HttpGet("obter/{id}")]
+        public async Task<IActionResult> Obter(Guid id)
         {
             return JPGetActionResult(await _mediator.Send(new ObterCursoRequest(id)));
         }
 
-        [HttpDelete("remover")]
-        public async Task<IActionResult> Remover([FromQuery] Guid id)
+        [HttpDelete("remover/{id}")]
+        public async Task<IActionResult> Remover(Guid id)
         {
             return JPDeletActionResult(await _mediator.Send(new RemoverCursoRequest(id)));
         }

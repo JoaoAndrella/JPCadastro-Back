@@ -15,6 +15,12 @@ namespace JPCadastro.Controllers.Enumerators
             return Ok(Listar<Periodo>());
         }
 
+        [HttpGet("listar-status-matricula")]
+        public IActionResult ListarStatusMatricula ()
+        {
+            return Ok(Listar<StatusMatricula>());
+        }
+
         private List<object> Listar<T>() where T : Enum
         {
             var enumVals = new List<object>();

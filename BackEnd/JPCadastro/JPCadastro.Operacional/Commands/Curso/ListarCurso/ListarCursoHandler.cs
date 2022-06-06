@@ -1,4 +1,5 @@
 ﻿using JPCadastro.Core.DTOs;
+using JPCadastro.Operacional.Enumeradores;
 using JPCadastro.Operacional.Interfaces.Repositories;
 using MediatR;
 using prmToolkit.NotificationPattern;
@@ -9,12 +10,12 @@ namespace JPCadastro.Operacional.Commands.Curso.ListarCurso
         IRequestHandler<ListarCursoRequest, CommandResponse>
     {
         private readonly IRepositoryCurso _repositoryCurso;
-        
+
         public ListarCursoHandler(IRepositoryCurso repositoryCurso)
         {
             _repositoryCurso=repositoryCurso;
         }
-
+    
         public Task<CommandResponse> Handle(ListarCursoRequest request,
             CancellationToken cancellationToken)
         {
@@ -25,7 +26,9 @@ namespace JPCadastro.Operacional.Commands.Curso.ListarCurso
             {
                 Id= p.Id,
                 Nome= p.Nome,
-                Periodo=  p.Periodo,
+                Periodo=  p.Periodo == Periodo.Manha ? "Manha" 
+                                       : p.Periodo == Periodo.Tarde ? "Tarde" 
+                                       : p.Periodo == Periodo.Noite ? "Noite" : "Integral",
                 ProfessorId= p.ProfessorId,
                 ProfessorNome=p.Professor?.Nome
             }), this));
